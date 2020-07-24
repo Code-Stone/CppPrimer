@@ -7,10 +7,10 @@
 using namespace std;
 using namespace std::placeholders;
 
-bool largers(const int i, const string& str) {return i > str.size();}
+bool check_size(const int i, const string& str) {return i > str.size();}
 
 int biggers(vector<int>& vec, const string& str) {
-    auto pos = find_if(vec.cbegin(), vec.cend(), bind(largers, _1, str));
+    auto pos = find_if(vec.cbegin(), vec.cend(), bind(check_size, _1, str));
     return pos - vec.begin();
 }
 
